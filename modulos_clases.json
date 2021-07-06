@@ -1,0 +1,48 @@
+{
+    "modulos":{
+        "M1": ["Fundamentos: Numpy, Pandas, Estadística", "evaluableActivityUnitDropdownOption0"],
+        "M2": ["EDA, Limpieza de datos, Inferencia Estadística", "evaluableActivityUnitDropdownOption1"],
+        "M3": ["Intro a ML: Regresión Lineal, Regularización", "evaluableActivityUnitDropdownOption2"],
+        "M4": ["Problemas de Clasificación, GridSearch, Clustering", "evaluableActivityUnitDropdownOption3"],
+        "M5": ["Árboles, Ensambles y Boosting", "evaluableActivityUnitDropdownOption4"]
+                },
+
+    "clases":{
+        "C1": ["Presentacion del curso : Intro a DS", "evaluableActivityLessonDropdownOption0"],
+        "C2": ["Conceptos de programación - Práctica obligatoria", "evaluableActivityLessonDropdownOption1"],
+        "C3": ["Numpy - Práctica obligatoria", "evaluableActivityLessonDropdownOption2"],
+        "C4": ["Estadística descriptiva - Práctica obligatoria", "evaluableActivityLessonDropdownOption3"],
+        "C5": ["Pandas I - Práctica obligatoria", "evaluableActivityLessonDropdownOption4"],
+        "C8": ["Check de repaso y GPS - Práctica obligatoria", "evaluableActivityLessonDropdownOption5"],
+        "C6": ["Probabilidad - Práctica obligatoria", "evaluableActivityLessonDropdownOption6"],
+        "C7": ["Geopandas - Práctica obligatoria", "evaluableActivityLessonDropdownOption7"],
+        "C9": ["Limpieza de datos - Práctica obligatoria", "evaluableActivityLessonDropdownOption0"],
+        "C10": ["Visualización I - Práctica obligatoria", "evaluableActivityLessonDropdownOption1"],
+        "C11": ["Pandas II, Join con Pandas - Práctica obligatoria", "evaluableActivityLessonDropdownOption2"],
+        "C12": ["Data Wrangling - Práctica obligatoria", "evaluableActivityLessonDropdownOption3"],
+        "C13": ["Visualizacion II - Práctica obligatoria", "evaluableActivityLessonDropdownOption4"],
+        "C15": ["Estadística Inferencial I - Práctica obligatoria","evaluableActivityLessonDropdownOption5"],
+        "C16": ["Estadística Inferencial II + AB Testing - Práctica obligatoria", "evaluableActivityLessonDropdownOption6"],
+        "C17": ["Check de repaso y GPS - Práctica obligatoria", "evaluableActivityLessonDropdownOption7"],
+        "C18": ["Introducción a Machine Learning - Práctica obligatoria","evaluableActivityLessonDropdownOption8"],
+        "C20": ["ML II- Train-test split - Práctica obligatoria","evaluableActivityLessonDropdownOption0"],
+        "C21": ["Regresión lineal simple - Práctica obligatoria","evaluableActivityLessonDropdownOption1"],
+        "C22": ["Regresión lineal múltiple: Feature Scaling - Práctica obligatoria", "evaluableActivityLessonDropdownOption2"],
+        "C23": ["Regularización - Práctica obligatoria", "evaluableActivityLessonDropdownOption3"],
+        "C25": ["Check de repaso y GPS - Práctica obligatoria", "evaluableActivityLessonDropdownOption4"],
+        "C26": ["Intro a Clasificación y KNN - Práctica obligatoria", "evaluableActivityLessonDropdownOption5"],
+        "C28": ["Regresión Logística y regularización - Práctica obligatoria", "evaluableActivityLessonDropdownOption0"],
+        "C29": ["Naive Bayes - Práctica obligatoria", "evaluableActivityLessonDropdownOption1"],
+        "C30": ["Evaluación de modelos y Grid Search - Práctica obligatoria", "evaluableActivityLessonDropdownOption2"],
+        "C31": ["Clustering y DBSCAN - Práctica obligatoria", "evaluableActivityLessonDropdownOption3"],
+        "C33": ["Check de repaso y GPS - Práctica obligatoria", "evaluableActivityLessonDropdownOption4"],
+        "C34": ["CART - Práctica Obligatoria", "evaluableActivityLessonDropdownOption5"],
+        "C36": ["Ensamble - Práctica obligatoria", "evaluableActivityLessonDropdownOption0"],
+        "C37": ["Bagging, Random Forest - Práctica obligatoria", "evaluableActivityLessonDropdownOption1"],
+        "C38": ["Boosting y XGBoost - Práctica obligatoria", "evaluableActivityLessonDropdownOption2"],
+        "C39": ["Evaluación de Modelos y Feature Importance - Práctica obligatoria", "evaluableActivityLessonDropdownOption3"],
+        "C40": ["La maldición de la dimensionalidad + Feature Selection (algoritmos genéticos) - Práctica obligatoria", "evaluableActivityLessonDropdownOption4"],
+        "C41": ["Pipelines - Práctica obligatoria", "evaluableActivityLessonDropdownOption5"],
+        "C42": ["Check de repaso y GPS - Práctica obligatoria", "evaluableActivityLessonDropdownOption6"]
+            }
+}
