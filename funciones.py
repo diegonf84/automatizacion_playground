@@ -19,15 +19,22 @@ with open('modulos_clases.json', encoding = 'latin1') as json_file:
 modulos = opciones['modulos']
 clases = opciones['clases']
 
+#os.environ.get('PLAYGROUND_USER')
+#os.environ.get('PLAYGROUND_PASS')
 
 class Proceso():
 
-    def __init__(self, numero_curso, cod_modulo, cod_clase) -> None:
+    def __init__(self, numero_curso, cod_modulo, cod_clase, username, password) -> None:
         self.curso = str(numero_curso)
         self.modulo = str(cod_modulo)
         self.clase = str(cod_clase)
+        self.username = str(username)
+        self.password = str(password)
 
     def descarga_encuesta(self):
+
+        modulo_elegido = str(modulos.get(self.modulo)[1])
+        clase_elegida = str(clases.get(self.clase)[1])
 
         chromeOptions = Options()
         chromeOptions.add_argument("--start-maximized")
@@ -35,22 +42,24 @@ class Proceso():
 
         driver = webdriver.Chrome(r'C:\Users\user\chromedriver.exe', options=chromeOptions)
 
+
+
         #open the webpage
         driver.get("https://playground.digitalhouse.com/login")
 
         #target username
-        username = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[id='username']")))
-        password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[id='input-password']")))
+        username_box = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[id='username']")))
+        password_box = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[id='input-password']")))
 
         #enter username and password
-        username.clear()
-        username.send_keys(os.environ.get('PLAYGROUND_USER'))
-        password.clear()
-        password.send_keys(os.environ.get('PLAYGROUND_PASS'))
+        username_box.clear()
+        username_box.send_keys(self.username)
+        password_box.clear()
+        password_box.send_keys(self.password)
         time.sleep(next(segundos()))
 
         #target the login button and click it
-        WebDriverWait(driver, 2).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
+        WebDriverWait(driver, 2).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']")), message = 'Fallo aca').click()
         time.sleep(5)
 
         #Accedo a la pestaña de cursos
@@ -58,7 +67,6 @@ class Proceso():
         time.sleep(next(segundos()))
 
         #Elijo el curso que quiero ver
-        #numero_curso = str(2806)
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.CSS_SELECTOR, f'div[id="more_options_{self.curso}"]'))).click()
         time.sleep(next(segundos()))
 
@@ -74,16 +82,14 @@ class Proceso():
         time.sleep(5)
 
         #elijo el módulo
-        modulo = str(modulos.get(self.modulo)[1])
         WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div[4]/div[2]/div[1]/div/div[1]/i'))).click()
         time.sleep(next(segundos()))
-        WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.XPATH, f'//*[@id="{modulo}"]'))).click()
+        WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.XPATH, f'//*[@id="{modulo_elegido}"]'))).click()
 
         #boton de clase
-        clase = str(clases.get(self.clase)[1])
         WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div[4]/div[2]/div[2]/div/div[1]/i'))).click()
         time.sleep(next(segundos()))
-        WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.XPATH, f'//*[@id="{clase}"]'))).click()
+        WebDriverWait(driver, 4).until(EC.element_to_be_clickable((By.XPATH, f'//*[@id="{clase_elegida}"]'))).click()
 
 
         #Ultimos dos bloques son siempre los mismos
@@ -104,7 +110,7 @@ class Proceso():
         driver.quit()
 
 
-prueba = Proceso(numero_curso = '2806', cod_modulo = 'M1', cod_clase = 'C2')
+prueba = Proceso(numero_curso = '2806', cod_modulo = 'M1', cod_clase = 'C2', username = os.environ.get('PLAYGROUND_USER'), password = os.environ.get('PLAYGROUND_PASS'))
 
 
 prueba.descarga_encuesta()
